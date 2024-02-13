@@ -18,6 +18,7 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { useState, useTransition } from "react";
 import { register } from "@/actions/register";
+import { LuLoader2 } from "react-icons/lu";
 
 
 
@@ -126,6 +127,9 @@ export const RegisterForm = () => {
                     <FormError message={error} />
                     <FormSuccess message={success} />
                     <Button type="submit" className="w-full" disabled={isPending}>
+                    {isPending && (
+                        <LuLoader2 className="mr-2 h-4 w-4 animate-spin" />
+                    )}
                         Create an account
                     </Button>
                 </form>
